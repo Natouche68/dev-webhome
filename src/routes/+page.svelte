@@ -6,7 +6,9 @@
 	<div class="title">Dev WebHome</div>
 	<div class="search-bar">
 		<Search width={2} height={2} />
-		<input type="text" />
+		<form method="POST">
+			<input type="text" autocomplete="off" name="search" />
+		</form>
 	</div>
 </div>
 
@@ -26,7 +28,6 @@
 	}
 
 	.search-bar {
-		width: 60vw;
 		border: 0.25rem solid #000;
 		box-shadow: 0 0 0 #000;
 		padding: 0.5rem;
@@ -46,7 +47,7 @@
 	}
 
 	.search-bar input {
-		width: 100%;
+		width: 60vw;
 		padding: 0;
 		font-size: 2rem;
 		border: none;
