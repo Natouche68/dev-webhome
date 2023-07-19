@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Search from "$lib/icons/Search.svelte";
+
+	let searchQuery: string = "";
 </script>
 
 <div class="home">
@@ -7,7 +9,12 @@
 	<div class="search-bar">
 		<Search width={2} height={2} />
 		<form method="POST">
-			<input type="text" autocomplete="off" name="search" />
+			<input
+				type="text"
+				autocomplete="off"
+				name="search"
+				bind:value={searchQuery}
+			/>
 		</form>
 	</div>
 </div>

@@ -1,9 +1,19 @@
+import type { Actions } from "./$types";
 import { redirect } from "@sveltejs/kit";
+import { parseSearch } from "$lib/parseSearch";
+import { defaultSearchEngine } from "$lib/searchEngines";
 
 export const actions = {
 	default: async ({ request }) => {
 		const data = await request.formData();
-		const searchQuery = data.get("search");
-		throw redirect(303, `https://www.ecosia.org/search?q=${searchQuery}`);
+		const searchInputValue = data.get("search") as string;
+
+		const { searchQuery, searchEngine } = parseSearch(searchInputValue);
+
+		if (!searchEngine) {
+			throw redirect(303, defaultSearchEngine + searchQuery);
+		}
+
+		throw redirect(303, searchEngine.url + searchQuery);
 	},
-};
+} satisfies Actions;
