@@ -1,13 +1,24 @@
 <script lang="ts">
 	import Search from "$lib/icons/Search.svelte";
+	import type { SearchEngine } from "$lib/searchEngines";
+	import { parseSearch } from "$lib/parseSearch";
 
 	let searchQuery: string = "";
+	let searchEngine: SearchEngine | undefined;
+
+	$: {
+		searchEngine = parseSearch(searchQuery).searchEngine;
+	}
 </script>
 
 <div class="home">
 	<div class="title">Dev WebHome</div>
 	<div class="search-bar">
-		<Search width={2} height={2} />
+		{#if searchEngine}
+			<svelte:component this={searchEngine.icon} width={2} height={2} />
+		{:else}
+			<Search width={2} height={2} />
+		{/if}
 		<form method="POST">
 			<input
 				type="text"
