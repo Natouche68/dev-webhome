@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Search from "$lib/icons/Search.svelte";
-	import type { SearchEngine } from "$lib/searchEngines";
 	import { parseSearch } from "$lib/parseSearch";
 
 	let searchQuery: string = "";
@@ -10,12 +9,13 @@
 
 <div class="home">
 	<div class="title">Dev WebHome</div>
-	<div class="search-bar">
-		{#if searchEngine}
-			<svelte:component this={searchEngine.icon} width={2} height={2} />
-		{:else}
-			<Search width={2} height={2} />
-		{/if}
+	<div class="search-bar" style="--color:{searchEngine?.color || '#000'}">
+		<svelte:component
+			this={searchEngine?.icon || Search}
+			width={2}
+			height={2}
+			color={searchEngine?.color || "#000"}
+		/>
 		<form method="POST">
 			<input
 				type="text"
@@ -44,7 +44,7 @@
 
 	.search-bar {
 		border: 0.25rem solid #000;
-		box-shadow: 0 0 0 #000;
+		box-shadow: 0 0 0 var(--color);
 		padding: 0.5rem;
 		border-radius: 1rem;
 		font-size: 2rem;
@@ -58,7 +58,7 @@
 
 	.search-bar:has(input:focus) {
 		transform: translate(-0.25rem, -0.25rem);
-		box-shadow: 0.5rem 0.5rem 0 #000;
+		box-shadow: 0.5rem 0.5rem 0 var(--color);
 	}
 
 	.search-bar input {
