@@ -25,18 +25,25 @@
 			/>
 		</form>
 	</div>
+	<a
+		class="help"
+		href="https://github.com/Natouche68/dev-webhome#search-engines"
+	>
+		Need help ?
+	</a>
 </div>
 
 <style>
 	.home {
 		display: flex;
-		height: 80vh;
+		height: 100vh;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.title {
+		text-align: center;
 		font-size: 4rem;
 		font-weight: 700;
 		margin: 3rem;
@@ -69,5 +76,12 @@
 		font-size: 2rem;
 		border: none;
 		outline: none;
+	}
+
+	.help {
+		margin-top: 12rem;
+		font-size: 1.2rem;
+		color: #a6a6a6;
+		text-decoration: none;
 	}
 </style>
