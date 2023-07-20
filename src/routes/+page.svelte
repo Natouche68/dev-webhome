@@ -7,9 +7,9 @@
 	$: searchEngine = parseSearch(searchQuery).searchEngine;
 </script>
 
-<div class="home">
+<div class="home" style="--color:{searchEngine?.color || '#000'}">
 	<div class="title">Dev WebHome</div>
-	<div class="search-bar" style="--color:{searchEngine?.color || '#000'}">
+	<div class="search-bar">
 		<svelte:component
 			this={searchEngine?.icon || Search}
 			width={2}
@@ -40,6 +40,8 @@
 		font-size: 4rem;
 		font-weight: 700;
 		margin: 3rem;
+		color: var(--color);
+		transition: color 0.4s ease;
 	}
 
 	.search-bar {
