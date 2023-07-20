@@ -4,11 +4,8 @@
 	import { parseSearch } from "$lib/parseSearch";
 
 	let searchQuery: string = "";
-	let searchEngine: SearchEngine | undefined;
 
-	$: {
-		searchEngine = parseSearch(searchQuery).searchEngine;
-	}
+	$: searchEngine = parseSearch(searchQuery).searchEngine;
 </script>
 
 <div class="home">
