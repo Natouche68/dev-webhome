@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Dev WebHome</title>
+	<link rel="shortcut icon" href="favicon.png" />
+</svelte:head>
+
 <slot />
 
 <style>
