@@ -17,10 +17,12 @@
 			color={searchEngine?.color || "#000"}
 		/>
 		<form method="POST">
+			<!-- svelte-ignore a11y-autofocus -->
 			<input
 				type="text"
 				autocomplete="off"
 				name="search"
+				autofocus
 				bind:value={searchQuery}
 			/>
 		</form>
