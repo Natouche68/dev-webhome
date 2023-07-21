@@ -20,3 +20,15 @@ Here are the supported search engines:
 - Ecosia Images : `!img`
 
 > Feel free to add your own by making a pull request !
+
+## Make it your default search engine
+
+You can easily make it your default search engine :
+
+- Go in the settings of your browser
+- Click on `Search engines` > `Manage search engines` and site search
+- Add a new search engines with these details :
+  - Search engine : **Dev WebHome**
+  - Shortcut : `:dev` _(you can choose what you want)_
+  - URL : `https://dev-webhome.vercel.app/search/%s`
+- Click one the three dots and choose **Set as default**
