@@ -36,7 +36,7 @@
 <style>
 	.home {
 		display: flex;
-		height: 100vh;
+		height: 96vh;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
@@ -52,6 +52,7 @@
 	}
 
 	.search-bar {
+		background: #fff;
 		border: 0.25rem solid #000;
 		box-shadow: 0 0 0 var(--color);
 		padding: 0.5rem;
@@ -81,7 +82,7 @@
 	.help {
 		margin-top: 12rem;
 		font-size: 1.2rem;
-		color: #a6a6a6;
+		color: #d7d7d7;
 		text-decoration: none;
 	}
 </style>
