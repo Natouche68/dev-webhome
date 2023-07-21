@@ -6,7 +6,7 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		adapter: adapter({
-			runtime: "edge",
+			runtime: "nodejs18.x",
 		}),
 	},
 };
